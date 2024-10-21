@@ -147,7 +147,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>VCF Maker || Placement Batch 2025-26</h1>
+        <h1>VCF Maker || Recruitment Season 2024-25</h1>
         
         <!-- Roll number input and company name -->
         <textarea id="rollNumbers" placeholder="Paste Roll Numbers separated by commas or new lines"></textarea>
@@ -166,7 +166,6 @@
         <button id="submitPasswordBtn">Submit</button>
     </div>
 </div>
-
 
     <script src="https://apis.google.com/js/api.js"></script>
     <script>
@@ -221,9 +220,9 @@ function createVCF(data, rollNumbers, companyName) {
     }
 
     filteredData.forEach(row => {
-        let name = row[1];  // Name column (B)
-        let rollNo = row[2];  // Roll Number column (C)
-        let phoneNumber = row[9];  // Phone Number 1 column (J)
+        let name = row[0];  // Name column (A)
+        let rollNo = row[1];  // Roll Number column (B)
+        let phoneNumber = row[2];  // Phone Number column (C)
 
         // Nomenclature for Full Name Field (FN): "Name RollNo. CompanyName"
         let fullName = `${name} ${rollNo} ${companyName}`;
@@ -268,8 +267,8 @@ function createVCF(data, rollNumbers, companyName) {
                 return;
             }
 
-            const sheetId = '1wz1veGp7olGBBg9qtiHGZDbLtVdK9DFc4If5Sq5Ps50';  // Replace with your sheet ID
-            const range = 'Registered Database!A:K';  // Assuming data starts at row 2
+            const sheetId = '1RobGWmRwz4oQKlG8KOtZ72QKh_0gc1mUTcyw0Ad64Sw';  // Replace with your sheet ID
+            const range = 'Sheet1!A:C';  // Assuming data starts at row 2
 
             // Fetch and process the Google Sheet data
             fetchGoogleSheetData(sheetId, range, rollNumbers, companyName);
@@ -287,7 +286,7 @@ function showPasswordModal() {
 // Handle password submission
 document.getElementById("submitPasswordBtn").addEventListener("click", function () {
     const password = document.getElementById("passwordInput").value;
-    if (password === "sakshamgod") {
+    if (password === "bestscteam") {
         document.getElementById("passwordModal").style.display = "none"; // Hide modal on correct password
     } else {
         alert("Incorrect password");
@@ -299,8 +298,6 @@ document.getElementById("submitPasswordBtn").addEventListener("click", function 
 window.onload = showPasswordModal;
 
     </script>
-
-
 
 </body>
 </html>
