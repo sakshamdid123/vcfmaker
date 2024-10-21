@@ -212,7 +212,7 @@
 
 function createVCF(data, rollNumbers, companyName) {
     let vcfContent = "";
-    const filteredData = data.filter(row => rollNumbers.includes(row[2])); // Filter by roll number (C)
+    const filteredData = data.filter(row => rollNumbers.includes(row[1])); // Filter by roll number (B)
 
     if (filteredData.length === 0) {
         alert("No matching roll numbers found.");
